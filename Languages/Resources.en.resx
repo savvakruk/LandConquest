@@ -186,14 +186,26 @@
   <data name="LocLabelAvailable_Text" xml:space="preserve">
     <value>Available</value>
   </data>
+  <data name="LocLabelBecomeARuler_Text" xml:space="preserve">
+    <value>Become a ruler</value>
+  </data>
   <data name="LocLabelBow_Text" xml:space="preserve">
     <value>Bow</value>
+  </data>
+  <data name="LocLabelBOYARS_Content" xml:space="preserve">
+    <value>BOYARS</value>
   </data>
   <data name="LocLabelBuy_Content" xml:space="preserve">
     <value>Buy</value>
   </data>
   <data name="LocLabelCharacteristics" xml:space="preserve">
     <value>Characteristics</value>
+  </data>
+  <data name="LocLabelChooseColorForTheState_Text" xml:space="preserve">
+    <value>Choose color for the state</value>
+  </data>
+  <data name="LocLabelChooseStateRuler_Text" xml:space="preserve">
+    <value>Select a ruler</value>
   </data>
   <data name="LocLabelConsumption_Content" xml:space="preserve">
     <value>Consumption</value>
@@ -203,6 +215,9 @@
   </data>
   <data name="LocLabelCountryMain_Content" xml:space="preserve">
     <value>Country</value>
+  </data>
+  <data name="LocLabelCountryNameLengthValidation" xml:space="preserve">
+    <value>Country name length shoud be greater than or equal 3 characters</value>
   </data>
   <data name="LocLabelCurrentOnline_Text" xml:space="preserve">
     <value>Current online:</value>
@@ -216,11 +231,20 @@
   <data name="LocLabelDate_Content" xml:space="preserve">
     <value>Date</value>
   </data>
+  <data name="LocLabelDECLAREWAR_Content" xml:space="preserve">
+    <value>DECLARE WAR</value>
+  </data>
   <data name="LocLabelDinastyMain_Content" xml:space="preserve">
     <value>Dynasty</value>
   </data>
   <data name="LocLabelEmail_Content" xml:space="preserve">
     <value>Email</value>
+  </data>
+  <data name="LocLabelEnterStateName_Content" xml:space="preserve">
+    <value>Enter state name</value>
+  </data>
+  <data name="LocLabelEstablichAState_Text" xml:space="preserve">
+    <value>Establish a state</value>
   </data>
   <data name="LocLabelEstablishAState_Text" xml:space="preserve">
     <value>Establish a state</value>
@@ -297,6 +321,9 @@
   <data name="LocLabelLogin_Content" xml:space="preserve">
     <value>Login</value>
   </data>
+  <data name="LocLabelMAKEAPACT_Content" xml:space="preserve">
+    <value>MAKE A PACT</value>
+  </data>
   <data name="LocLabelMarketMain_Content" xml:space="preserve">
     <value>Market</value>
   </data>
@@ -324,8 +351,14 @@
   <data name="LocLabelPerHour_Text" xml:space="preserve">
     <value>p/h</value>
   </data>
+  <data name="LocLabelPersonBecomeANewRuler_Text" xml:space="preserve">
+    <value>{0} will become the ruler of a new country</value>
+  </data>
   <data name="LocLabelPlayer_Content" xml:space="preserve">
     <value>Player</value>
+  </data>
+  <data name="LocLabelPointsUpgrade" xml:space="preserve">
+    <value>Upgrade Points</value>
   </data>
   <data name="LocLabelPower" xml:space="preserve">
     <value>Power</value>
@@ -356,6 +389,9 @@
   </data>
   <data name="LocLabelRegistration_Content" xml:space="preserve">
     <value>Reg</value>
+  </data>
+  <data name="LocLabelRENAME_Content" xml:space="preserve">
+    <value>RENAME</value>
   </data>
   <data name="LocLabelSawmill_Text" xml:space="preserve">
     <value>Sawmill</value>
@@ -390,11 +426,20 @@
   <data name="LocLabelTaxes_Content" xml:space="preserve">
     <value>Taxes</value>
   </data>
+  <data name="LocLabelTheStateWasFounded_Text" xml:space="preserve">
+    <value>The state was founded</value>
+  </data>
+  <data name="LocLabelThisLandIsIndependentDescription_Text" xml:space="preserve">
+    <value>{0} is an independent land. The government has not yet been formed. You can establish a state here and become the ruler of these lands.</value>
+  </data>
   <data name="LocLabelTitle_Content" xml:space="preserve">
     <value>Title</value>
   </data>
   <data name="LocLabelTotal_Text" xml:space="preserve">
     <value>Total</value>
+  </data>
+  <data name="LocLabelTRANSFERLAND_Content" xml:space="preserve">
+    <value>TRANSFER LAND</value>
   </data>
   <data name="LocLabelUpgrade_Text" xml:space="preserve">
     <value>Upgrade</value>

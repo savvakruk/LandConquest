@@ -1,32 +1,35 @@
-﻿using LandConquestDB.Entities;
+﻿using Dapper;
+using LandConquestDB.Entities;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Linq;
 
 namespace LandConquestDB.Models
 {
     public class CountryModel
     {
-        public static Country EstablishState(Player player, Land land, System.Windows.Media.Color color)
+        public static Country EstablishState(Land land, Person person, System.Windows.Media.Color color, string _countryName)
         {
             Color newColor = Color.FromArgb(color.A, color.R, color.G, color.B);
             string colorHex = ColorTranslator.ToHtml(newColor);
             string coffers = "10000";
             int capitalId = land.LandId;
-            string countryQuery = "INSERT INTO dbo.CountryData (country_name,country_ruler,country_color,country_coffers, capital_id) VALUES (@country_name,@country_ruler,@country_color,@country_coffers, @capital_id)";
+            string countryQuery = "INSERT INTO dbo.CountryData (country_name, country_ruler, country_player, country_color, country_coffers, capital_id) VALUES (@country_name, @country_ruler, @country_player, @country_color, @country_coffers, @capital_id)";
             var countryCommand = new SqlCommand(countryQuery, DbContext.GetSqlConnection());
 
             Country country = new Country();
             country.CountryId = SelectLastIdOfStates();
-            country.CountryName = land.LandName + " state";
-            country.CountryRuler = player.PlayerId;
+            country.CountryName = _countryName;
+            country.CountryRuler = person.PersonId;
+            country.CountryPlayer = person.PlayerId;
             country.CountryColor = colorHex;
             country.CountryCoffers = coffers;
             country.CapitalId = capitalId;
-
            
             countryCommand.Parameters.AddWithValue("@country_name", country.CountryName);
             countryCommand.Parameters.AddWithValue("@country_ruler", country.CountryRuler);
+            countryCommand.Parameters.AddWithValue("@country_player", country.CountryPlayer);
             countryCommand.Parameters.AddWithValue("@country_color", country.CountryColor);
             countryCommand.Parameters.AddWithValue("@country_coffers", country.CountryCoffers);
             countryCommand.Parameters.AddWithValue("@capital_id", country.CapitalId);
@@ -58,57 +61,9 @@ namespace LandConquestDB.Models
             return state_max_id;
         }
 
-        public static List<Country> GetCountriesInfo(List<Country> countries)
+        public static List<Country> GetCountriesInfo()
         {
-            string query = "SELECT * FROM dbo.CountryData";
-            List<int> countriesCountryId = new List<int>();
-            List<string> countriesCountryName = new List<string>();
-            List<string> countriesCountryRuler = new List<string>();
-            List<string> countriesCountryColor = new List<string>();
-            List<int> countriesCapitalId = new List<int>();
-
-            var command = new SqlCommand(query, DbContext.GetSqlConnection());
-
-            using (var reader = command.ExecuteReader())
-            {
-                var countryId = reader.GetOrdinal("country_id");
-                var countryName = reader.GetOrdinal("country_name");
-                var countryRuler = reader.GetOrdinal("country_ruler");
-                var countryColor = reader.GetOrdinal("country_color");
-                var capitalId = reader.GetOrdinal("capital_id");
-
-                while (reader.Read())
-                {
-                    countriesCountryId.Add(reader.GetInt32(countryId));
-                    countriesCountryName.Add(reader.GetString(countryName));
-                    countriesCountryRuler.Add(reader.GetString(countryRuler));
-                    countriesCountryColor.Add(reader.GetString(countryColor));
-                    if (reader.IsDBNull(capitalId))
-                        countriesCapitalId.Add(0);
-                    else
-                        countriesCapitalId.Add(reader.GetInt32(capitalId));
-                }
-                reader.Close();
-            }
-
-            command.Dispose();
-
-            for (int i = 0; i < countriesCountryId.Count; i++)
-            {
-                countries[i].CountryId = countriesCountryId[i];
-                countries[i].CountryName = countriesCountryName[i];
-                countries[i].CountryRuler = countriesCountryRuler[i];
-                countries[i].CountryColor = countriesCountryColor[i];
-                countries[i].CapitalId = countriesCapitalId[i];
-            }
-
-            countriesCountryId = null;
-            countriesCountryName = null;
-            countriesCountryRuler = null;
-            countriesCountryColor = null;
-            countriesCapitalId = null;
-
-            return countries;
+            return DbContext.GetSqlConnection().Query<Country>("SELECT * FROM dbo.CountryData ORDER BY country_name ASC").ToList();
         }
 
         public static List<string> GetCountryLandsNamesNotWarInvolved(Country _country)
@@ -137,27 +92,7 @@ namespace LandConquestDB.Models
 
         public static int GetCountryIdByLandId(int _landId)
         {
-            int id = 0;
-
-            string query = "SELECT country_id FROM dbo.LandData WHERE land_id = @land_id ";
-
-            var command = new SqlCommand(query, DbContext.GetSqlConnection());
-            command.Parameters.AddWithValue("@land_id", _landId);
-
-            using (var reader = command.ExecuteReader())
-            {
-                var countryId = reader.GetOrdinal("country_id");
-
-                while (reader.Read())
-                {
-                    id = reader.GetInt32(countryId);
-                }
-                reader.Close();
-            }
-
-            command.Dispose();
-
-            return id;
+            return DbContext.GetSqlConnection().Query<int>("SELECT country_id FROM dbo.LandData WHERE land_id = @land_id", new { land_id = _landId }).FirstOrDefault();
         }
 
         public static string GetCountryRuler(int id)
