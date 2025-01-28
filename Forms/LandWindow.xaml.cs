@@ -45,7 +45,7 @@ namespace LandConquest.Forms
             storage = new PlayerStorage();
             landStorage = new LandStorage();
 
-            storage = StorageModel.GetPlayerStorage(player);
+            //storage = StorageModel.GetPlayerStorage(player);
             landStorage = LandStorageModel.GetLandStorage(land, landStorage);
             landWoodToolTip.Content = landStorage.Wood;
             landFoodToolTip.Content = landStorage.Food;
@@ -55,6 +55,10 @@ namespace LandConquest.Forms
             landCopperToolTip.Content = landStorage.Copper;
             landGemsToolTip.Content = landStorage.Gems;
             landLeatherToolTip.Content = landStorage.Leather;
+            landHouses.Content = BuildingsModel.GetSumLandPopulation(land.LandId);
+            playerHouses.Content = BuildingsModel.GetSumPlayerLandPopulation(player.PlayerId, land.LandId);
+            landPopulation.Content = BuildingsModel.GetSumLandPopulation(land.LandId) * 10;
+            playerPopulation.Content = BuildingsModel.GetSumPlayerLandPopulation(player.PlayerId, land.LandId) * 10;
 
             if (WarehouseModel.GetWarehouseId(player.PlayerId, land.LandId).HasValue)//warehouse exists
             {
@@ -104,7 +108,7 @@ namespace LandConquest.Forms
             var warehouseId = WarehouseModel.GetWarehouseId(player.PlayerId, land.LandId);
             if (warehouseId.HasValue)
             {
-                WarehouseWindow openedWindow = new WarehouseWindow(user, player, warehouseId.Value);
+                WarehouseWindow openedWindow = new WarehouseWindow(player, warehouseId.Value, 4);
                 openedWindow.Owner = Application.Current.MainWindow;
                 openedWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
                 openedWindow.Show();
@@ -129,6 +133,14 @@ namespace LandConquest.Forms
         private void UpgradeCastleImg_MouseDown(object sender, MouseButtonEventArgs e)
         {
             CastleUpdateDialog openedWindow = new CastleUpdateDialog(land);
+            openedWindow.Owner = Application.Current.MainWindow;
+            openedWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            openedWindow.Show();
+        }
+
+        private void upgrageHouses_Click(object sender, RoutedEventArgs e)
+        {
+            BuildingsUpdateDialog openedWindow = new BuildingsUpdateDialog(player, land);
             openedWindow.Owner = Application.Current.MainWindow;
             openedWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             openedWindow.Show();

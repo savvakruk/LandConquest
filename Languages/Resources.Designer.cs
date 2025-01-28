@@ -241,6 +241,15 @@ namespace LandConquest.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelAttackersLand_Content.
+        /// </summary>
+        public static string LocLabelAttackersLand_Content {
+            get {
+                return ResourceManager.GetString("LocLabelAttackersLand_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на LocLabelAuctionMain_Content.
         /// </summary>
         public static string LocLabelAuctionMain_Content {
@@ -412,6 +421,33 @@ namespace LandConquest.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelDeclareWarDialogWindow_Text.
+        /// </summary>
+        public static string LocLabelDeclareWarDialogWindow_Text {
+            get {
+                return ResourceManager.GetString("LocLabelDeclareWarDialogWindow_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelDefendersCountry_Content.
+        /// </summary>
+        public static string LocLabelDefendersCountry_Content {
+            get {
+                return ResourceManager.GetString("LocLabelDefendersCountry_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelDefendersLand_Content.
+        /// </summary>
+        public static string LocLabelDefendersLand_Content {
+            get {
+                return ResourceManager.GetString("LocLabelDefendersLand_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на LocLabelDinastyMain_Content.
         /// </summary>
         public static string LocLabelDinastyMain_Content {
@@ -574,6 +610,15 @@ namespace LandConquest.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelHouses.
+        /// </summary>
+        public static string LocLabelHouses {
+            get {
+                return ResourceManager.GetString("LocLabelHouses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на LocLabelIndustryMain_Content.
         /// </summary>
         public static string LocLabelIndustryMain_Content {
@@ -588,6 +633,15 @@ namespace LandConquest.Languages {
         public static string LocLabelInfantry_Text {
             get {
                 return ResourceManager.GetString("LocLabelInfantry_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelInitializedBy_Content.
+        /// </summary>
+        public static string LocLabelInitializedBy_Content {
+            get {
+                return ResourceManager.GetString("LocLabelInitializedBy_Content", resourceCulture);
             }
         }
         
@@ -790,6 +844,15 @@ namespace LandConquest.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelPopulation.
+        /// </summary>
+        public static string LocLabelPopulation {
+            get {
+                return ResourceManager.GetString("LocLabelPopulation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на LocLabelPower.
         /// </summary>
         public static string LocLabelPower {
@@ -885,6 +948,24 @@ namespace LandConquest.Languages {
         public static string LocLabelRENAME_Content {
             get {
                 return ResourceManager.GetString("LocLabelRENAME_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelRenameStateDialogWindow_Text.
+        /// </summary>
+        public static string LocLabelRenameStateDialogWindow_Text {
+            get {
+                return ResourceManager.GetString("LocLabelRenameStateDialogWindow_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelRenameStateTo_Text.
+        /// </summary>
+        public static string LocLabelRenameStateTo_Text {
+            get {
+                return ResourceManager.GetString("LocLabelRenameStateTo_Text", resourceCulture);
             }
         }
         
@@ -988,6 +1069,24 @@ namespace LandConquest.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelTheLawWasInitiated_Text.
+        /// </summary>
+        public static string LocLabelTheLawWasInitiated_Text {
+            get {
+                return ResourceManager.GetString("LocLabelTheLawWasInitiated_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelTheLawWasNotInitiated_Text.
+        /// </summary>
+        public static string LocLabelTheLawWasNotInitiated_Text {
+            get {
+                return ResourceManager.GetString("LocLabelTheLawWasNotInitiated_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на LocLabelTheStateWasFounded_Text.
         /// </summary>
         public static string LocLabelTheStateWasFounded_Text {
@@ -1029,6 +1128,24 @@ namespace LandConquest.Languages {
         public static string LocLabelTRANSFERLAND_Content {
             get {
                 return ResourceManager.GetString("LocLabelTRANSFERLAND_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelTransferLandDialogWindow_Text.
+        /// </summary>
+        public static string LocLabelTransferLandDialogWindow_Text {
+            get {
+                return ResourceManager.GetString("LocLabelTransferLandDialogWindow_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на LocLabelTransferLandToState_Text.
+        /// </summary>
+        public static string LocLabelTransferLandToState_Text {
+            get {
+                return ResourceManager.GetString("LocLabelTransferLandToState_Text", resourceCulture);
             }
         }
         

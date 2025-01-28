@@ -177,6 +177,9 @@
   <data name="LocLabelArmy_Content" xml:space="preserve">
     <value>LocLabelArmy_Content</value>
   </data>
+  <data name="LocLabelAttackersLand_Content" xml:space="preserve">
+    <value>LocLabelAttackersLand_Content</value>
+  </data>
   <data name="LocLabelAuctionMain_Content" xml:space="preserve">
     <value>LocLabelAuctionMain_Content</value>
   </data>
@@ -231,8 +234,17 @@
   <data name="LocLabelDate_Content" xml:space="preserve">
     <value>LocLabelDate_Content</value>
   </data>
+  <data name="LocLabelDeclareWarDialogWindow_Text" xml:space="preserve">
+    <value>LocLabelDeclareWarDialogWindow_Text</value>
+  </data>
   <data name="LocLabelDECLAREWAR_Content" xml:space="preserve">
     <value>LocLabelDECLAREWAR_Content</value>
+  </data>
+  <data name="LocLabelDefendersCountry_Content" xml:space="preserve">
+    <value>LocLabelDefendersCountry_Content</value>
+  </data>
+  <data name="LocLabelDefendersLand_Content" xml:space="preserve">
+    <value>LocLabelDefendersLand_Content</value>
   </data>
   <data name="LocLabelDinastyMain_Content" xml:space="preserve">
     <value>LocLabelDinastyMain_Content</value>
@@ -288,11 +300,17 @@
   <data name="LocLabelHire_Text" xml:space="preserve">
     <value>LocLabelHire_Text</value>
   </data>
+  <data name="LocLabelHouses" xml:space="preserve">
+    <value>LocLabelHouses</value>
+  </data>
   <data name="LocLabelIndustryMain_Content" xml:space="preserve">
     <value>LocLabelIndustryMain_Content</value>
   </data>
   <data name="LocLabelInfantry_Text" xml:space="preserve">
     <value>LocLabelInfantry_Text</value>
+  </data>
+  <data name="LocLabelInitializedBy_Content" xml:space="preserve">
+    <value>LocLabelInitializedBy_Content</value>
   </data>
   <data name="LocLabelIntelligence" xml:space="preserve">
     <value>LocLabelIntelligence</value>
@@ -360,6 +378,9 @@
   <data name="LocLabelPointsUpgrade" xml:space="preserve">
     <value>LocLabelPointsUpgrade</value>
   </data>
+  <data name="LocLabelPopulation" xml:space="preserve">
+    <value>LocLabelPopulation</value>
+  </data>
   <data name="LocLabelPower" xml:space="preserve">
     <value>LocLabelPower</value>
   </data>
@@ -389,6 +410,12 @@
   </data>
   <data name="LocLabelRegistration_Content" xml:space="preserve">
     <value>LocLabelRegistration_Content</value>
+  </data>
+  <data name="LocLabelRenameStateDialogWindow_Text" xml:space="preserve">
+    <value>LocLabelRenameStateDialogWindow_Text</value>
+  </data>
+  <data name="LocLabelRenameStateTo_Text" xml:space="preserve">
+    <value>LocLabelRenameStateTo_Text</value>
   </data>
   <data name="LocLabelRENAME_Content" xml:space="preserve">
     <value>LocLabelRENAME_Content</value>
@@ -426,6 +453,12 @@
   <data name="LocLabelTaxes_Content" xml:space="preserve">
     <value>LocLabelTaxes_Content</value>
   </data>
+  <data name="LocLabelTheLawWasInitiated_Text" xml:space="preserve">
+    <value>LocLabelTheLawWasInitiated_Text</value>
+  </data>
+  <data name="LocLabelTheLawWasNotInitiated_Text" xml:space="preserve">
+    <value>LocLabelTheLawWasNotInitiated_Text</value>
+  </data>
   <data name="LocLabelTheStateWasFounded_Text" xml:space="preserve">
     <value>LocLabelTheStateWasFounded_Text</value>
   </data>
@@ -437,6 +470,12 @@
   </data>
   <data name="LocLabelTotal_Text" xml:space="preserve">
     <value>LocLabelTotal_Text</value>
+  </data>
+  <data name="LocLabelTransferLandDialogWindow_Text" xml:space="preserve">
+    <value>LocLabelTransferLandDialogWindow_Text</value>
+  </data>
+  <data name="LocLabelTransferLandToState_Text" xml:space="preserve">
+    <value>LocLabelTransferLandToState_Text</value>
   </data>
   <data name="LocLabelTRANSFERLAND_Content" xml:space="preserve">
     <value>LocLabelTRANSFERLAND_Content</value>

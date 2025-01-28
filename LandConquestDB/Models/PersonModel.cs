@@ -13,6 +13,11 @@ namespace LandConquestDB.Models
     {
         public static void CreatePerson(Person _person)
         {
+            //DbContext.GetSqlConnection().Execute("INSERT INTO dbo.PersonData (player_id, person_id, name, surname, maleFemale, lvl, exp, power, agility," +
+            //                                           "health, intellect) " +
+            //               "VALUES (@player_id, @person_id, @name, @surname, @maleFemale, @lvl, @exp, @power, @agility, @health," +
+            //                       "@intellect)", new { player_id = _person.PlayerId, person_id = _person.PersonId, name = _person.Name, surname = _person.Surname, maleFemale = _person.MaleFemale, lvl = _person.Lvl, exp = _person.Exp, power = _person.Power, agility = _person.Agility, health = _person.Health, intellect = _person.Intellect });
+
             string query = "INSERT INTO dbo.PersonData (player_id, person_id, name, surname, maleFemale, lvl, exp, power, agility," +
                                                        "health, intellect) " +
                            "VALUES (@player_id, @person_id, @name, @surname, @maleFemale, @lvl, @exp, @power, @agility, @health," +
@@ -39,7 +44,7 @@ namespace LandConquestDB.Models
         }
         public static Person GetPersonInfo(string _personId)
         {
-            return DbContext.GetSqlConnection().Query<Person>("SELECT * FROM dbo.PersonData WHERE person_id = @person_id", new { _personId = _personId }).FirstOrDefault();
+            return DbContext.GetSqlConnection().Query<Person>("SELECT * FROM dbo.PersonData WHERE person_id = @person_id", new { person_id = _personId }).FirstOrDefault();
         }
 
         public static List<Person> GetPlayerPersons(string _playerId)
@@ -85,9 +90,9 @@ namespace LandConquestDB.Models
         public static bool CheckPersonDynastyExistence(string dynasty)
         {
             var player_id = "";
-            
-            player_id = DbContext.GetSqlConnection().Query<string>("SELECT player_id FROM dbo.PersonData WHERE surname = @surname", new { surname = dynasty}).FirstOrDefault();
-            if(String.IsNullOrWhiteSpace(player_id))
+
+            player_id = DbContext.GetSqlConnection().Query<string>("SELECT player_id FROM dbo.PersonData WHERE surname = @surname", new { surname = dynasty }).FirstOrDefault();
+            if (String.IsNullOrWhiteSpace(player_id))
             {
                 return false;
             }
